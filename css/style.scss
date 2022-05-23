@@ -1,0 +1,360 @@
+@charset 'utf-8';
+@import url('nanumsquare/nanumsquare.css');
+
+// 변수
+$pagew : 1000px;
+$header-container : 1155px;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline-style: none; */
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+/* 공통요소 */
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.container {
+    position: relative;
+    display: block;
+    width: $pagew;
+    margin: 0 auto;
+}
+
+/* // 공통요소 */
+
+.wrap {
+    position: relative;
+    display: block;
+}
+
+body {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: -0.5;
+    color: #888;
+    font-family: 'NanumSquare', 'Malgun Gothic', '맑은 고딕', "돋움", Verdana, sans-serif;
+}
+
+/* 상단 */
+.header {
+    position: relative;
+    display: block;
+    .container {
+        width: $header-container;
+        .header-top {
+            position: relative;
+            display: block;
+            margin: 20px 0;
+            .help-menu {
+                position: relative;
+                display: block;
+                float: right;
+                overflow: hidden;
+                li {
+                    position: relative;
+                    display: block;
+                    float: left;
+                    margin-left: 5px;
+                    a {
+                        position: relative;
+                        display: block;
+                        width: 23px;
+                        height: 23px;
+                        font-size: 0;
+                    }
+                    &:nth-child(1) {
+                        background: url('../images/sns_blog.png') no-repeat center;
+                        background-size: cover;
+                    }
+                    &:nth-child(2) {
+                        background: url('../images/sns_insta.png') no-repeat center;
+                        background-size: cover;
+                        
+                    }
+                    &:nth-child(3) {
+                        background: url('../images/sns_facebook.png') no-repeat center;
+                        background-size: cover;
+                        
+                    }
+                }
+            }
+
+        }
+        .header-main {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items:flex-start;
+            
+            .logo {
+                position: relative;
+                display: block;
+                width: 200px;
+                height: 47px;
+                background: url('../images/logo.png') no-repeat center;
+                background-size: cover;
+                font-size: 0;
+            }
+            .nav {
+                position: relative;
+                display: block;
+                height: 70px;
+                overflow: hidden;
+                padding-top: 10px;
+                transition: height 0.5s;
+
+                .navbg {
+                    position: absolute;
+                    right: 0;
+                    top: 70px;
+                    width: $header-container;
+                    height: 210px;
+                }
+
+                .gnb {
+                    position: relative;
+                    display: block;
+                    overflow: hidden;
+                    > li {
+                        position: relative;
+                        display: block;
+                        float: left;
+                        text-align: center;
+                        margin: 0 38px;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        > a {
+                            position: relative;
+                            display: block;
+                            font-size: 18px;
+                            line-height: 30px;
+                            color: #333;
+
+                        }
+                        
+                        .submenu {
+                            position: relative;
+                            display: block;
+                            margin-top: 25px;
+                            li {
+                                position: relative;
+                                display: block;
+                                a {
+                                    position: relative;
+                                    display: block;
+                                    width: 100%;
+                                    line-height: 30px;
+                                    font-size: 14px;
+                                    color: #999;
+                                    background: #fff;
+
+                                    &:hover {
+                                        color: #000;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nav-active {
+    height: 280px !important;
+}
+
+.fix-active {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
+    .container {
+        .header-top {
+        display: none;
+        border-bottom: 1px solid #eee;
+        }
+        .header-main {
+            .logo {
+                width: 141px;
+                height: 33px;
+                margin-top: 20px;
+            }
+            .nav {
+                margin-top: 20px;
+            }
+        }    
+    }
+}
+
+
+@media all and (max-width:1155px) {
+    .header {
+        .container {
+            width: 100%;
+            margin: 0;
+            .header-main {
+                .logo {
+                    margin-left: 0.98vw;
+                }
+                .nav {
+                    .gnb {
+                        > li {
+                            margin: 0 1.95vw;
+                            &:last-child {
+                                margin-right: 0.98vw;
+                            }
+                        }
+                    }
+                }
+            }           
+        }
+    }
+}
+@media all and (max-width:1024px) {
+    .header {
+        .container {
+            .header-main {
+                .logo {
+                    width: 141px;
+                    height: 33px;
+                }
+                .nav {
+                    .gnb {
+                        > li {
+                            a {
+                                font-size: 16px;
+                            }
+                            .submenu {
+                                li {
+                                    a {
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width:700px) {
+    .header {
+        .container {
+            .header-top {
+                display: none;
+            }
+            .header-main {
+                height: 80px;
+                justify-content: center;
+                align-items: center;
+                .nav {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* //상단 */
+
+/* 비주얼 */
+.visual {
+    position: relative;
+    display: block;
+    height: 700px;
+    background-color: skyblue;
+}
+/* //비주얼 */
+
+/* 스토리 */
+.story {
+    position: relative;
+    display: block;
+    .container {
+        padding: 100px 0;
+
+    }
+}
+/* //스토리 */
+
+/* 상품안내 */
+.good {
+    position: relative;
+    display: block;
+    .container {
+        padding: 100px 0;
+
+    }
+}
+/* //상품안내 */
+
+/* 프랜차이즈 */
+.franchiser {
+    position: relative;
+    display: block;
+    .container {
+        padding: 100px 0;
+
+    }
+}
+/* //프랜차이즈 */
+
+/* sns */
+.sns {
+    position: relative;
+    display: block;
+    .container {
+        padding: 100px 0;
+
+    }
+}
+/* //sns */
+
+/* 하단 */
+.footer {
+    position: relative;
+    display: block;
+}
+/* //하단 */
