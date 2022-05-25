@@ -18,7 +18,12 @@ $(document).ready(function () {
 
 
     // 스크롤 기능
-    let header = $('.header')
+    let header = $('.header')    
+    let w = $(window).width();
+    if(w > 700) {
+        fixHeader();
+    }
+
     function fixHeader(){
         $(window).scroll(function(){
             let temp = $(window).scrollTop();
@@ -57,7 +62,7 @@ $(document).ready(function () {
     
     // 화면 리사이징 처리
     $(window).resize(function(){
-        let w = $(window).width();
+        w = $(window).width();
         if(w > 700) {
             mMenuBg.removeClass('m-menu-active');
             mMuenuWrap.removeClass('m-menu-active');
@@ -72,7 +77,8 @@ window.onload = function(){
     let sw_visual = new Swiper('.sw-visual', {
         loop : true,
         autoplay : {
-            delay: 2000,
+            delay: 2500,
+            speed : 5000,
             disableOnInteraction: false,
           },
         navigation : {
@@ -81,4 +87,27 @@ window.onload = function(){
         }
         
     });
+    
+    
+    // story slide
+    let sw_story = new Swiper('.sw-story', {
+        loop : true,
+        slidesPerView : 2,
+        autoplay : {
+            delay: 2500,
+            speed : 3000,
+            disableOnInteraction: false,
+          },
+        navigation : {
+            prevEl : ".sw-story-prev",
+            nextEl: ".sw-story-next",
+        },
+        breakpoints : {
+            700 :  {
+                slidesPerView : 1,
+            }
+        }
+        
+    });
+    
 }
