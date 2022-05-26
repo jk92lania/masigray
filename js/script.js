@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    
+    
     // 주메뉴 모션 적용
     let nav = $('.nav');
     let headerMain = $('.header-main');
@@ -13,7 +15,12 @@ $(document).ready(function () {
         nav.removeClass('nav-active');
     });
 
-    
+    // 상단이동 버튼
+    $('.gotop').click(function(){
+        $('html').animate({
+            scrollTop: 0
+        }, 500);
+    });
     
 
 
@@ -106,6 +113,23 @@ window.onload = function(){
             700 :  {
                 slidesPerView : 1,
             }
+        }
+        
+    });
+
+
+    
+    // good slide
+    let sw_good = new Swiper('.sw-good', {
+        loop : true,
+        slidesPerView : 1,
+        navigation : {
+            prevEl : ".sw-good-prev",
+            nextEl: ".sw-good-next",
+        },
+        pagination : {
+            el : '.sw-good-pg',
+            clickable : true
         }
         
     });
