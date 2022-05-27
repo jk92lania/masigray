@@ -332,14 +332,15 @@ body {
 
                 .gnb {
                     position: relative;
-                    display: block;
-                    overflow: hidden;
+                    display: flex;
+                    justify-content: right;
+                    
                     > li {
                         position: relative;
                         display: block;
-                        float: left;
-                        text-align: center;
-                        margin: 0 38px;
+                        // text-align: right;
+                        // margin: 0 38px;
+                        margin: 0 18px;
 
                         &:first-child {
                             margin-left: 0;
@@ -354,6 +355,7 @@ body {
                             font-size: 18px;
                             line-height: 30px;
                             color: #333;
+                            white-space: nowrap;
 
                         }
                         
